@@ -1,15 +1,15 @@
 import { math } from "cc";
-import { ECurrencyType } from "./ECurrencyType";
-import { CustomActionWithTwoParam } from "./Utills/CustomActions";
+import { ECurrencyType } from "../Currency/ECurrencyType";
+import { CustomActionWithTwoParam } from "../Utills/CustomActions";
 
 
 export class Wallet {
     public static readonly SAVE_KEY = 'Wallet_Save';
 
     private currencies: Map<ECurrencyType, number> = new Map<ECurrencyType, number>();
-    private onCurrencyValueChange:CustomActionWithTwoParam<ECurrencyType,number> = new CustomActionWithTwoParam<ECurrencyType,number>();
+    private onCurrencyValueChange: CustomActionWithTwoParam<ECurrencyType, number> = new CustomActionWithTwoParam<ECurrencyType, number>();
 
-    public get OnCurrencyValueChange():CustomActionWithTwoParam<ECurrencyType,number>{
+    public get OnCurrencyValueChange(): CustomActionWithTwoParam<ECurrencyType, number> {
         return this.onCurrencyValueChange;
     }
 
@@ -27,7 +27,7 @@ export class Wallet {
         }
         var newValue = math.clamp(this.currencies.get(type) + amount, 0, Number.MAX_SAFE_INTEGER);
         this.currencies.set(type, newValue);
-        this.onCurrencyValueChange.Invoke(type,newValue);
+        this.onCurrencyValueChange.Invoke(type, newValue);
         this.Save();
         return newValue;
     }
@@ -41,7 +41,7 @@ export class Wallet {
 
     private FromJson(jsonObject: Object) {
 
-        if(!jsonObject) return;
+        if (!jsonObject) return;
 
         var curs: [] | null = jsonObject["currencies"] ? jsonObject["currencies"] : null;
         if (curs && curs.length > 0) {

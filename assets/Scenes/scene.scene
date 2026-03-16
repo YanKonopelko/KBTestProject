@@ -226,7 +226,7 @@
         "__id__": 26
       }
     ],
-    "_id": "d4LgUrJVpE0418EiQGcTgI"
+    "_id": "ebfmcXwqNBiK3SWIakTPfc"
   },
   {
     "__type__": "CounterPlaceInfo",
@@ -770,14 +770,14 @@
     "nodeParent": {
       "__id__": 18
     },
-    "type": 2
+    "type": 1
   },
   {
     "__type__": "CounterPlaceInfo",
     "nodeParent": {
       "__id__": 20
     },
-    "type": 1
+    "type": 2
   },
   {
     "__type__": "cc.PrefabInfo",

@@ -1,5 +1,5 @@
 import { _decorator, Enum, Node } from 'cc';
-import { ECurrencyType } from './ECurrencyType';
+import { ECurrencyType } from './Currency/ECurrencyType';
 
 const { ccclass, property } = _decorator;
 
